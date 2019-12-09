@@ -27,15 +27,9 @@ int main()
 	{
 		try
 		{
-<<<<<<< HEAD
 			if (command->Account->curLevel) std::cerr << command->Account->curUserId << "@";
 			else std::cerr << "Guest User@";
 
-=======
-			if (command->Account->curLevel) std::cout << command->Account->curUserId << "@";
-			else std::cout << "Guest User@";
-			
->>>>>>> parent of 092ac76... Log System implemented
 			std::string str = "";
 			if (expert) str = UserInterface::read();
 			else str = UserInterface::getInput(command->Account->curLevel == 7);
