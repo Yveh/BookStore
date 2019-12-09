@@ -108,7 +108,7 @@ void CommandSystem::printSelected(const DataType &req)
 		if (!check(u, req)) continue;
 		std::cout.setf(std::ios::fixed);
 		std::cout << u.ISBN << "\t" << u.name << "\t" << u.author << "\t" << u.keyword << "\t";
-		std::cout << std::setprecision(2) << u.price << "\t" << u.quantity << "±¾" << "\n";
+		std::cout << std::setprecision(2) << u.price << "\t" << u.quantity << "æœ¬" << "\n";
 	}
 }
 
@@ -214,7 +214,7 @@ ResultType CommandSystem::dataCommand(std::vector<std::string> &token)
 		modify(backup, t);
 		auto event = FinancialEvent(stringToInteger(token[1]), stringToDouble(token[2]), false);
 		Finance->addEvent(event);
-		log->addEvent(event, user, "import " + t.ISBN + " " + token[1] + "±¾");
+		log->addEvent(event, user, "import " + t.ISBN + " " + token[1] + "æœ¬");
 	}
 	else if (cmd == "show" && token.size() == 1)
 	{
@@ -272,7 +272,7 @@ ResultType CommandSystem::dataCommand(std::vector<std::string> &token)
 		modify(backup, t);
 		auto event = FinancialEvent(quantity, t.price * quantity, true);
 		Finance->addEvent(event);
-		log->addEvent(event, user, "buy " + t.ISBN + " " + token[2] + "±¾");
+		log->addEvent(event, user, "buy " + t.ISBN + " " + token[2] + "æœ¬");
 	}
 	else throw std::logic_error("Invalid");
 	return Executed;
